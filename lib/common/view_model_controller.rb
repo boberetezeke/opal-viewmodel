@@ -1,4 +1,13 @@
 class ViewModelController
+  def self.render_view_model(*args)
+    if /opal/ =~ RUBY_ENGINE
+      @vmc = new(*args) unless @vmc
+    else
+      @vmc = new(*args)
+    end
+    @vmc.render_view_model(yield(@vmc))
+  end
+
   def initialize(controller, action, params)
     @controller = controller
     @action = action
