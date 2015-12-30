@@ -14,6 +14,10 @@ class ViewModelController
   def params
     @controller.params
   end
+
+  def render(*args, &block)
+    @controller.render(*args, &block)
+  end
 end
 
 

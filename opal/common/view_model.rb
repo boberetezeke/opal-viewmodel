@@ -1,0 +1,1 @@
+../../lib/common/view_model.rb
